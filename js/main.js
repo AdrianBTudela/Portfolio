@@ -11,9 +11,7 @@ camera.position.z = 5;
 
 const mtlLoader = new THREE.MTLLoader();
 mtlLoader.load("assets/pc.mtl", mtlParseResult => {
-    const materials = MtlObjBridge.addMaterialsFromMtlLoader(mtlParseResult);
     const objLoader = new THREE.OBJLoader();
-    objLoader.addMaterials(materials);
     objLoader.load("assets/pc.obj", obj => scene.add(obj));
 });
 var animate = function () {
